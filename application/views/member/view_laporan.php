@@ -82,7 +82,7 @@
             </div>
             <!-- /.card -->
           </div>
-                        <?php var_dump($alllaporan)?>
+                        <?php //var_dump($alllaporan);?>
           <div class="col-md-12">
 
             <?php 
@@ -137,12 +137,13 @@
               <th scope="col">Action</th>
               </tr>
               </thead>
-              <tbody>
-              <?php foreach($alllaporan as $lap): ?>
-              <td>. $lap['kd_barang'] .</td>
-              <td></td>
-              <?php endforeach;?>
-              </tbody>
+              <tbody>';
+              foreach($alllaporan as $lap):
+                 $out .='<td>'. $lap['kd_barang'] .'</td>';
+                 $out .='<td></td>';
+              endforeach;
+              
+              $out = '</tbody>
               </table>
               </div>
               <!-- /.row -->
