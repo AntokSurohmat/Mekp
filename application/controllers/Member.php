@@ -6,6 +6,11 @@ class Member extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		is_logged_in();
+
+		//untuk mengatasi error confirm form resubmission
+		header('Cache-Control: no-cache, must-revalidate, max-age=0');
+		header('Cache-Control: post-check=0, pre-check=0',false);
+		header('Pragma: no-cache');
 	}
 
 	public function index(){
@@ -413,7 +418,7 @@ class Member extends CI_Controller {
 			$data = [
 
 				'tgl_masuk' => $this->input->post('i'),
-				'kd_barang' =>$this->input->post('a'),
+				'kd_barang' =>ucfirst($this->input->post('a')),
 				'jumlah' =>$this->input->post('g'),
 				'dari_ke' =>$this->input->post('j'),
 				'catatan' =>$this->input->post('k')
@@ -432,7 +437,7 @@ class Member extends CI_Controller {
 
 				$barang = [
 
-					'kd_barang' =>$this->input->post('a'),
+					'kd_barang' =>ucfirst($this->input->post('a')),
 					'nm_barang' =>$this->input->post('b'),
 					'merk' =>$this->input->post('c'),
 					'kategori' =>$this->input->post('d'),
@@ -441,7 +446,6 @@ class Member extends CI_Controller {
 					'jumlah' =>$this->input->post('g'),
 					'thn_pengadaan' =>$this->input->post('h'),
 					'catatan' =>$this->input->post('k'),
-					'id_barang_masuk' => $id_barang_masuk
 
 				];
 
@@ -496,7 +500,7 @@ class Member extends CI_Controller {
 
 			$data = [
 
-				'kd_barang' => $this->input->post('a'),
+				'kd_barang' => ucfirst($this->input->post('a')),
 				'jumlah' => $this->input->post('b'),
 				'tgl_masuk' => $this->input->post('c'),
 				'dari_ke' => $this->input->post('d'),
@@ -549,7 +553,7 @@ class Member extends CI_Controller {
 
 			$data = [
 
-				'kd_barang' => $this->input->post('a'),
+				'kd_barang' => ucfirst($this->input->post('a')),
 				'jumlah' => $this->input->post('b'),
 				'tgl_keluar' => $this->input->post('c'),
 				'dari_ke' => $this->input->post('d'),
@@ -606,7 +610,7 @@ class Member extends CI_Controller {
 		$this->load->model('Member_model','barang');
 		$data['allba'] = $this->barang->getAllBarang();
 		$data['oneba'] = $this->barang->getOneBarang($id);
-		$data['allhisba'] = $this->barang->getHistoryBarang($id);
+		// $data['allhisba'] = $this->barang->getHistoryBarang($id);
 
 		$data['title'] = "Detail Barang";
 		$this->template->load('layout/template','member/view_barang_detail',$data);
@@ -647,7 +651,7 @@ class Member extends CI_Controller {
 
 			$data = [
 
-				'kd_barang' => $this->input->post('a'),
+				'kd_barang' => ucfirst($this->input->post('a')),
 				'nm_barang' => $this->input->post('b'),
 				'merk' => $this->input->post('c'),
 				'kategori' => $this->input->post('d'),
@@ -917,15 +921,25 @@ class Member extends CI_Controller {
 		redirect('member/perbaikanEdit/'.$id);
 	}
 
-		public function laporan(){
+	public function laporan(){
 		$data['user'] = $this->db->get_where('mekp_user',['email' => $this->session->userdata('email')])->row_array();
+
+		//menampilkan lokasi
+		$data['lokasidata'] = $this->db->get('mekp_lokasi')->result_array();
+		//menampilkan nama perawatan
+		$data['allperawatan'] = $this->db->get('mekp_perawatan')->result_array();
+		//menampilkan nama barang 
+		$data['allbarang'] = $this->db->get('mekp_barang')->result_array();
+				$this->load->model('Member_model','barang');
+		$data['allba'] = $this->barang->getAllBarang();
+		//menampilkan nama barang 
+		$data['allperbaikan'] = $this->db->get('mekp_perbaikan')->result_array();
+
 
 		$this->form_validation->set_rules('a', 'Pilih Tabel','required');
 		$this->form_validation->set_rules('b', 'Awal Periode','required');
 		$this->form_validation->set_rules('c', 'Akhir Periode','required');
 
-		// $this->load->model('Member_model','perawatan');
-		// $data['allperawatan'] = $this->perawatan->getAllPerawatan($tabel,$awal,$akhir);
 
 		if($this->form_validation->run() == false){
 			
@@ -956,4 +970,4 @@ class Member extends CI_Controller {
 			// redirect('member/laporan');
 
 		}}
-}
+	}
