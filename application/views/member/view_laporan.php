@@ -87,7 +87,7 @@
 
             <?php 
             $tabel = $this->input->post('a');
-
+            
             switch ($tabel) {
               case 'mekp_barang_masuk':
               $out = '<div class="card">
@@ -106,9 +106,19 @@
               <th scope="col">Action</th>
               </tr>
               </thead>
-              <tbody>
-              <?php var_dump($alllaporan)?>
-              </tbody>
+              <tbody>';
+
+              foreach($alllaporan as $lap):
+                 $out.='<tr>';
+                 $out .='<td></td>';                
+                 $out .='<td>'. $lap['kd_barang'] .'</td>';
+                 $out .='<td></td>';
+                 $out .='<td></td>';
+                 $out .='<td></td>';
+                 $out.='</tr>';
+              endforeach;
+              
+              $out .= '</tbody>
               </table>
               </div>
               <!-- /.row -->
@@ -119,6 +129,7 @@
               break;
 
               case 'mekp_barang_keluar':
+              
               $out = '            
               <!-- Default box -->
               <div class="card">
@@ -138,12 +149,18 @@
               </tr>
               </thead>
               <tbody>';
+
               foreach($alllaporan as $lap):
+                 $out.='<tr>';
+                 $out .='<td></td>';                
                  $out .='<td>'. $lap['kd_barang'] .'</td>';
                  $out .='<td></td>';
+                 $out .='<td></td>';
+                 $out .='<td></td>';
+                 $out.='</tr>';
               endforeach;
               
-              $out = '</tbody>
+              $out .= '</tbody>
               </table>
               </div>
               <!-- /.row -->
@@ -151,6 +168,8 @@
               <!-- /.card-body -->
               </div>
               <!-- /.card -->';
+               
+               
               break;
 
               default:
