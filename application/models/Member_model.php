@@ -5,7 +5,7 @@ class Member_model extends CI_Model {
 
 	public function getAllBarang(){
 
-		$query = "SELECT `a`.`id_barang`,`a`.`kd_barang`,`a`.`nm_barang`, `a`.`jumlah`, `b`.`nm_merk`,`c`.`nm_kategori`,`d`.`nm_status`,`e`.`nm_kondisi` FROM 
+		$query = "SELECT `a`.`id_barang`,`a`.`kd_barang`,`a`.`nm_barang`, `a`.`jumlah`,`a`.`thn_pengadaan`,`a`.`catatan`, `b`.`nm_merk`,`c`.`nm_kategori`,`d`.`nm_status`,`e`.`nm_kondisi` FROM 
 		`mekp_barang` `a` JOIN `mekp_merk` `b` ON `a`.`merk` = `b`.`id_merk` 
 		JOIN `mekp_kategori` `c` ON `a`.`kategori` = `c`.`id_kategori`
 		JOIN `mekp_status_barang` `d` ON `a`.`status` = `d`.`id_status`
