@@ -13,7 +13,7 @@ class Mypdf {
 		$this->ci =& get_instance();		
 	}
 
-	public function generate($view, $data = array(),$filename = 'Laporan', $paper = 'A4', $orientation = 'portrait'){
+	public function generate($view, $data = array() ,$filename = 'Laporan', $paper = 'A4', $orientation = 'portait'){
 
 		$dompdf = new Dompdf();
 		$html = $this->ci->load->view($view, $data, TRUE);
@@ -24,6 +24,7 @@ class Mypdf {
 
 // Render the HTML as PDF
 		$dompdf->render();
+		ob_clean();
 
 // Output the generated PDF to Browser
 		$dompdf->stream($filename . ".pdf",array("Attachment" => FALSE));

@@ -83,16 +83,11 @@
             </div>
             <!-- /.card -->
           </div>
-<<<<<<< HEAD
-=======
-                        <?php //var_dump($alllaporan);?>
->>>>>>> 5e964233ed8dea6ea65825c660b64af5d013d809
           <div class="col-md-12">
 
 
 
             <?php 
-<<<<<<< HEAD
 
             $tabel = $this->input->post('a');
             $awal = $this->input->post('b');
@@ -107,10 +102,10 @@
               $out .= '</h3>
               <div class="btn-group float-right">
               <div class="row">
-              <form action="'. base_url('laporan/pdf').'" method="post" >
+              <form action="'. base_url('laporan').'" method="post" >
               <input type="hidden" readonly value="mekp_barang_masuk" name="aa" class="form-control" >
-              <input type="hidden" readonly value ="$awal" name="bb" class="form-control" >
-              <input type="hidden" readonly value="$akhir" name="cc" class="form-control" >
+              <input type="hidden" readonly value ="'.set_value('b').'" name="bb" class="form-control" >
+              <input type="hidden" readonly value="'.set_value('c').'" name="cc" class="form-control" >
               <button type="submit" class="btn btn-sm btn-danger float-right"><i class="fas fa-file-pdf"></i>&ensp;Export Pdf</button>
               </form>
               &ensp;
@@ -120,62 +115,10 @@
               <input type="hidden" readonly value="$akhir" name="cc" class="form-control" >
               <button type="submit" class="btn btn-sm btn-success float-right"><i class="fas fa-file-excel"></i>&ensp;Export Excel</button>
               </form>
+              </div>
 
-=======
-            $tabel = $this->input->post('a');
-            
-            switch ($tabel) {
-              case 'mekp_barang_masuk':
-              $out = '<div class="card">
-              <div class="card-header">
-              <h4 class="card-title " text-align="center"><strong><?php echo $title; ?></strong></h4>
-              </div>
-              <div class="card-body">
-              <div>
-              <table id="example1" class="table table-bordered table-striped">
-              <thead>
-              <tr>
-              <th scope="col">#</th>
-              <th scope="col">Barang Masuk</th>
-              <th scope="col">Lokasi</th>
-              <th scope="col">Tanggal</th>
-              <th scope="col">Action</th>
-              </tr>
-              </thead>
-              <tbody>';
-
-              foreach($alllaporan as $lap):
-                 $out.='<tr>';
-                 $out .='<td></td>';                
-                 $out .='<td>'. $lap['kd_barang'] .'</td>';
-                 $out .='<td></td>';
-                 $out .='<td></td>';
-                 $out .='<td></td>';
-                 $out.='</tr>';
-              endforeach;
-              
-              $out .= '</tbody>
-              </table>
-              </div>
-              <!-- /.row -->
->>>>>>> 5e964233ed8dea6ea65825c660b64af5d013d809
-              </div>
-              &ensp;
               
               </div>
-<<<<<<< HEAD
-=======
-              <!-- /.card -->';
-              break;
-
-              case 'mekp_barang_keluar':
-              
-              $out = '            
-              <!-- Default box -->
-              <div class="card">
-              <div class="card-header">
-              <h4 class="card-title " text-align="center"><strong><?php echo $title; ?></strong></h4>
->>>>>>> 5e964233ed8dea6ea65825c660b64af5d013d809
               </div>
               <div class="card-body">
               <div>
@@ -193,7 +136,6 @@
               </thead>
               <tbody>';
 
-<<<<<<< HEAD
               $i=0; foreach($alllaporan as $lap): $i++;
               $out .='<tr>';
               $out .='<th scope="row">' .$i.'</th>';                
@@ -288,45 +230,6 @@
           <!-- /.row -->
           </div>
           <!-- /.card-body -->
-=======
-              foreach($alllaporan as $lap):
-                 $out.='<tr>';
-                 $out .='<td></td>';                
-                 $out .='<td>'. $lap['kd_barang'] .'</td>';
-                 $out .='<td></td>';
-                 $out .='<td></td>';
-                 $out .='<td></td>';
-                 $out.='</tr>';
-              endforeach;
-              
-              $out .= '</tbody>
-              </table>
-              </div>
-              <!-- /.row -->
-              </div>
-              <!-- /.card-body -->
-              </div>
-              <!-- /.card -->';
-               
-               
-              break;
-
-              default:
-              $out = '<div class="row">
-              <div class="col-12">
-              <div class="callout callout-danger">
-              <h5><i class="fas fa-info"></i> Note:</h5>
-              Silahkan Melengkapi Form Untuk Menampilkan Data
-              </div>
-              </div>
-              <!--/. Col -->
-              </div>
-              <!--/. Row -->';
-              break;
-            };
-            echo $out;
-            ?>
->>>>>>> 5e964233ed8dea6ea65825c660b64af5d013d809
           </div>
           <!-- /.card -->';
 
@@ -485,17 +388,18 @@
       $out .= $barang;
       $out .= '</h3>
       <div class="btn-group float-right">
-      <form action="'. base_url('laporan').'" method="post" >
+      <form action="'. base_url('laporan/pdf').'" method="post" >
       <input type="hidden" readonly value="mekp_barang_masuk" name="aa" class="form-control" >
       <input type="hidden" readonly value ="$awal" name="bb" class="form-control" >
       <input type="hidden" readonly value="$akhir" name="cc" class="form-control" >
       <button type="submit" class="btn btn-sm btn-danger float-right"><i class="fas fa-file-pdf"></i>&ensp;Export Pdf</button>
       </form>
-      <form action="'. base_url('laporan/all').'" method="post" >
+      &ensp;
+      <form action="'. base_url('laporan/excel').'" method="post" >
       <input type="hidden" readonly value="mekp_barang_masuk" name="aa" class="form-control" >
       <input type="hidden" readonly value ="$awal" name="bb" class="form-control" >
       <input type="hidden" readonly value="$akhir" name="cc" class="form-control" >
-      <button type="submit" class="btn btn-sm btn-danger float-right"><i class="fas fa-file-pdf"></i>&ensp;Export Pdf</button>
+      <button type="submit" class="btn btn-sm btn-success float-right"><i class="fas fa-file-excel"></i>&ensp;Export Excel</button>
       </form>
       </div>
       </div>

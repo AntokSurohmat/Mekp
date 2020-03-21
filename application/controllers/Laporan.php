@@ -7,38 +7,69 @@ class Laporan extends CI_Controller {
 		parent::__construct();
 		is_logged_in();
 
+				//untuk mengatasi error confirm form resubmission
+		header('Cache-Control: no-cache, must-revalidate, max-age=0');
+		header('Cache-Control: post-check=0, pre-check=0',false);
+		header('Pragma: no-cache');
+
 	}
 	public function index(){
 
-		// $this->load->library('mypdf');
-		// $this->mypdf->generate('laporan/dompdf');
+		$this->load->library('mypdf');
 
-		$tabel = $this->input->post('aa');
-		$awal = $this->input->post('bb');
-		$akhir = $this->input->post('cc');
 
-		if ($tabel == 'mekp_barang_masuk') {
-			$tgl = 'tgl_masuk';
-		}elseif ($tabel == 'mekp_barang_keluar') {
-			$tgl = 'tgl_keluar';
-		}elseif ($tabel == 'mekp_perawatan') {
-			$tgl = 'tgl_perawatan';
-		}elseif ($tabel == 'mekp_perbaikan') {
-			$tgl = 'tgl_perbaikan';
-		};
+//title
+		$data['barang'] = "Data List Barang";
+		$data['barangmasuk'] = "Data Barang Masuk";
+		$data['barangkeluar'] = "Data Barang Keluar";
+		$data['perawatan'] = "Data Perawatan";
+		$data['perbaikan'] = "Data Perbaikan";
+		//menampilkan lokasi
+		$data['lokasidata'] = $this->db->get('mekp_lokasi')->result_array();
+		//menampilkan nama perawatan
+		$data['allperawatan'] = $this->db->get('mekp_perawatan')->result_array();
+		//menampilkan nama barang 
+		$data['allbarang'] = $this->db->get('mekp_barang')->result_array();
+		$this->load->model('Member_model','barang');
+		$data['allba'] = $this->barang->getAllBarang();
+		//menampilkan nama barang 
+		$data['allperbaikan'] = $this->db->get('mekp_perbaikan')->result_array();
 
-		$queryLaporan = "SELECT * FROM $tabel WHERE ($tgl BETWEEN '$awal' AND '$akhir')";
+
+		$this->form_validation->set_rules('aa', 'Pilih Tabel','required');
+		$this->form_validation->set_rules('bb', 'Awal Periode','required');
+		$this->form_validation->set_rules('cc', 'Akhir Periode','required');
+
+
+		if($this->form_validation->run() == false){
+			
+			$data['title'] = "Data Laporan";
+			$this->template->load('layout/template','member/view_laporan',$data);
+		}else{
+
+			$tabel = $this->input->post('aa');
+			$awal = $this->input->post('bb');
+			$akhir = $this->input->post('cc');
+
+			if ($tabel == 'mekp_barang_masuk') {
+				$tgl = 'tgl_masuk';
+			}elseif ($tabel == 'mekp_barang_keluar') {
+				$tgl = 'tgl_keluar';
+			}elseif ($tabel == 'mekp_perawatan') {
+				$tgl = 'tgl_perawatan';
+			}elseif ($tabel == 'mekp_perbaikan') {
+				$tgl = 'tgl_perbaikan';
+			};
+
+			$queryLaporan = "SELECT * FROM $tabel WHERE ($tgl BETWEEN '$awal' AND '$akhir')";
 			// $row = $query->result_array();
 
-		$data['allpdf'] = $this->db->query($queryLaporan)->result_array();
-		$data['title'] = "Print";
-		$this->template->load('layout/template','member/view_laporan',$data);
-			// redirect('member/laporan');
+			$data['alllaporan'] = $this->db->query($queryLaporan)->result_array();
+			$data['title'] = "Data Laporan";
+			$this->template->load('layout/template','member/view_laporan',$data);
+			$data['title'] = "Print";
+			$this->mypdf->generate('Laporan/dompdf');
 
-
-
-
+		}
 	}
-
-	
 }
