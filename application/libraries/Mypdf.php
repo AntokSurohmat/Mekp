@@ -13,10 +13,10 @@ class Mypdf {
 		$this->ci =& get_instance();		
 	}
 
-	public function generate($view, $data = array() ,$filename = 'Laporan', $paper = 'A4', $orientation = 'portait'){
+	public function generate($html ,$filename, $paper = 'A4', $orientation = 'portait'){
 
 		$dompdf = new Dompdf();
-		$html = $this->ci->load->view($view, $data, TRUE);
+		// $html = $this->ci->load->view($view, $data, TRUE);
 		$dompdf->loadHtml($html);
 
 // (Optional) Setup the paper size and orientation
@@ -27,7 +27,7 @@ class Mypdf {
 		ob_clean();
 
 // Output the generated PDF to Browser
-		$dompdf->stream($filename . ".pdf",array("Attachment" => FALSE));
+		$dompdf->stream($filename . ".pdf",array("Attachment" => 0));
 	}
 }
 

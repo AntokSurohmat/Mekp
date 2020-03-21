@@ -53,22 +53,31 @@ class Laporan extends CI_Controller {
 
 			if ($tabel == 'mekp_barang_masuk') {
 				$tgl = 'tgl_masuk';
+				$name = 'Data Barang Masuk';
 			}elseif ($tabel == 'mekp_barang_keluar') {
 				$tgl = 'tgl_keluar';
+				$name = 'Data Barang Keluar';
 			}elseif ($tabel == 'mekp_perawatan') {
 				$tgl = 'tgl_perawatan';
+				$name = 'Data Perawatan';
 			}elseif ($tabel == 'mekp_perbaikan') {
 				$tgl = 'tgl_perbaikan';
+				$name = 'Data Perbaiakan';
 			};
 
 			$queryLaporan = "SELECT * FROM $tabel WHERE ($tgl BETWEEN '$awal' AND '$akhir')";
 			// $row = $query->result_array();
 
 			$data['alllaporan'] = $this->db->query($queryLaporan)->result_array();
-			$data['title'] = "Data Laporan";
-			$this->template->load('layout/template','member/view_laporan',$data);
-			$data['title'] = "Print";
-			$this->mypdf->generate('Laporan/dompdf');
+			$data['title'] = $name;
+			// $html = $this->template->load('layout/template','member/view_laporan',$data);
+
+			// $this->mypdf->generate('Laporan/dompdf');
+			// $html = $this->load->view('layout/templatepdf', $data, true);
+			// $html = $this->load->view('laporan/dompdf', $data, true);
+			$html = $this->template->load('layout/templatepdf','laporan/dompdf',$data, true);
+			$filename = $name;
+			$this->mypdf->generate($html,$filename);
 
 		}
 	}
