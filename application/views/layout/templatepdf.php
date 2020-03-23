@@ -9,15 +9,22 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE-master/plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE-master/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
   <!-- Theme style -->
 <!--   <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE-master/dist/css/adminlte.min.css"> -->
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
+<style>
+  .line-title{
+    border: 0;
+    border-style: inset;
+    border-top: 1px solid #000;
+
+  }
+</style>
 <body >
       <?php echo $contents; ?>
   <!-- jQuery -->

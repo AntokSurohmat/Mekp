@@ -977,5 +977,61 @@ class Member extends CI_Controller {
 
 		}
 	}
+	public function laporanhasil(){
+		$data['user'] = $this->db->get_where('mekp_user',['email' => $this->session->userdata('email')])->row_array();
+
+		//title
+		$data['barang'] = "Data List Barang";
+		$data['barangmasuk'] = "Data Barang Masuk";
+		$data['barangkeluar'] = "Data Barang Keluar";
+		$data['perawatan'] = "Data Perawatan";
+		$data['perbaikan'] = "Data Perbaikan";
+		//menampilkan lokasi
+		$data['lokasidata'] = $this->db->get('mekp_lokasi')->result_array();
+		//menampilkan nama perawatan
+		$data['allperawatan'] = $this->db->get('mekp_perawatan')->result_array();
+		//menampilkan nama barang 
+		$data['allbarang'] = $this->db->get('mekp_barang')->result_array();
+		$this->load->model('Member_model','barang');
+		$data['allba'] = $this->barang->getAllBarang();
+		//menampilkan nama barang 
+		$data['allperbaikan'] = $this->db->get('mekp_perbaikan')->result_array();
+
+
+		$this->form_validation->set_rules('a', 'Pilih Tabel','required');
+		$this->form_validation->set_rules('b', 'Awal Periode','required');
+		$this->form_validation->set_rules('c', 'Akhir Periode','required');
+
+
+		if($this->form_validation->run() == false){
+			
+			$data['title'] = "Data Laporan";
+			$this->template->load('layout/template','member/view_laporan_hasil',$data);
+		}else{
+
+			$tabel = $this->input->post('a');
+			$awal = $this->input->post('b');
+			$akhir = $this->input->post('c');
+
+			if ($tabel == 'mekp_barang_masuk') {
+				$tgl = 'tgl_masuk';
+			}elseif ($tabel == 'mekp_barang_keluar') {
+				$tgl = 'tgl_keluar';
+			}elseif ($tabel == 'mekp_perawatan') {
+				$tgl = 'tgl_perawatan';
+			}elseif ($tabel == 'mekp_perbaikan') {
+				$tgl = 'tgl_perbaikan';
+			};
+
+			$queryLaporan = "SELECT * FROM $tabel WHERE ($tgl BETWEEN '$awal' AND '$akhir')";
+			// $row = $query->result_array();
+
+			$data['alllaporan'] = $this->db->query($queryLaporan)->result_array();
+			$data['title'] = "Data Laporan";
+			$this->template->load('layout/template','member/view_laporan',$data);
+			// redirect('member/laporan');
+
+		}
+	}
 
 }

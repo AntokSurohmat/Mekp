@@ -1,7 +1,36 @@
+<img src="assets/img/fastikom.jpg" style="position: absolute; width: 60px; height: 60px;">
+<table style="width: 100%">
+	<tr>
+		<td align="center">
+			<span style="line-height: 1.6; font-weight: bold;">
+				FAKULTAS TEKNIK DAN ILMU KOMPUTER
+				<br>FASTIKOM 
+			</span>
+		</td>
+	</tr>
+</table>
+<hr class="line-title">
 
-<?php echo $this->input->post('aa');?>
-<?php echo $this->input->post('bb');?>
-<?php echo $this->input->post('cc');?>
+<table>
+	<tr>
+		<td style="font-weight: bold;">Nama Data</td>
+		<td></td>
+		<td>:</td>
+		<td ><?php echo $title;?></td>
+	</tr>
+	<tr>
+		<td style="font-weight: bold;">Dari Tanggal</td>
+		<td></td>
+		<td>:</td>
+		<td><?php echo date('d F Y', strtotime($this->input->post('bb')))  ;?></td>
+		<td style="font-weight: bold;">Sampai Tanggal</td>
+		<td></td>
+		<td>:</td>
+		<td><?php echo date('d F Y', strtotime($this->input->post('cc')))  ;?></td>
+	</tr>
+</table>
+<br>
+<br>
 <?php 
 
 $tabel = $this->input->post('aa');
@@ -9,18 +38,11 @@ $awal = $this->input->post('bb');
 $akhir = $this->input->post('cc');
 switch ($tabel) {
 	case 'mekp_barang_masuk':
-	$out = '<div class="card">
-	<div class="card-header border-0 bg-gray">
-	<h3 class="card-title ">';
-	$out .= $barangmasuk;
-	$out .= '</h3>
-	</div>
-	<div class="card-body">
-	<div>
-	<table id="example1" class="table table-bordered table-striped">
+	$out = '
+	<table class="table table-sm">
 	<thead>
 	<tr>
-	<th scope="row">#</th>
+	<th scope="col">#</th>
 	<th scope="col">Kode </th>
 	<th scope="col">Nama </th>
 	<th scope="col">Jumlah</th>
@@ -48,13 +70,7 @@ switch ($tabel) {
 endforeach;
 
 $out .= '</tbody>
-</table>
-</div>
-<!-- /.row -->
-</div>
-<!-- /.card-body -->
-</div>
-<!-- /.card -->';
+</table>';
 break;
 case 'mekp_barang_keluar':
 
