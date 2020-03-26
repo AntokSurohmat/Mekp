@@ -199,34 +199,12 @@ switch ($tabel) {
 
 	break;
 
-	default:
-	$out = '<div class="row">
-	<div class="col-12">
-	<div class="callout callout-danger">
-	<h5><i class="fas fa-info"></i> Note:</h5>
-	Silahkan Melengkapi Form Untuk Menampilkan Data yang di inginkan
-	</div>
-	</div>
-	<!--/. Col -->
-	</div>
-	<!--/. Row -->
+	case 'mekp_barang':
 
-	<!-- Bot row -->
-	<div class="row">
-	<!-- Left col -->
-	<section class="col-lg-12 connectedSortable">
-	<!-- Card Data Kategori -->
-	<div class="card">
-	<div class="card-header border-0 bg-gray">
-	<h3 class="card-title mt-2">
-	<i class="fas fa-th mr-1"></i>';
-	$out .= $barang;
-	$out .= '</h3>
-	</div>
-	<div class="card-body">
-	<table class="table table-striped table-bordered" id="example5">
+	$out = '            
+	<table id="example1" class="table table-bordered table-striped">
 	<thead>
-	<tr>
+	<tr >
 	<th style="width: 10px">#</th>
 	<th>Kode Barang</th>
 	<th>Barang</th>
@@ -240,6 +218,7 @@ switch ($tabel) {
 	</tr>
 	</thead>
 	<tbody>';
+
 	$i=0; foreach($allba as $lb) :  $i++;
 	$out .= '<tr>';
 	$out .= '<th scope="row">'. $i .'</th>';
@@ -252,21 +231,25 @@ switch ($tabel) {
 	$out .= '<td>'. $lb['jumlah']. '</td>';
 	$out .= '<td>'. $lb['thn_pengadaan'].'</td>';
 	$out .= '<td>'. $lb['catatan'].'</td>';
-	$out .= '</tr>';
-endforeach; 
-$out .='</tbody>
-</table>
-</div>
-<!-- /.card-body -->
-<div class="card-footer">
-</div>
-<!-- /.card-footer -->
-</div>
-<!-- /.card -->
-</section>
-<!-- /.Left col --> 
-</div>';
-break;
+	$out .= '</tr>';endforeach; 
+	$out .= '</tbody>
+	</table>';
+
+	break;
+
+
+	default:
+	$out = '<div class="row">
+	<div class="col-12">
+	<div class="callout callout-danger">
+	<h5><i class="fas fa-info"></i> Note:</h5>
+	Silahkan Melengkapi Form Untuk Menampilkan Data yang di inginkan
+	</div>
+	</div>
+	<!--/. Col -->
+	</div>
+	<!--/. Row -->';
+	break;
 
 };
 

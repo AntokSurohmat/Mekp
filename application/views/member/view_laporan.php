@@ -412,10 +412,8 @@
       $out .= $barang;
       $out .= '</h3>
       <div class="btn-group float-right">
-      <form action="'. base_url('laporan/pdf').'" method="post" >
-      <input type="hidden" readonly value="mekp_barang_masuk" name="aa" class="form-control" >
-      <input type="hidden" readonly value ="$awal" name="bb" class="form-control" >
-      <input type="hidden" readonly value="$akhir" name="cc" class="form-control" >
+      <form action="'. base_url('laporan/laporanall').'" method="post" >
+      <input type="hidden" readonly value="mekp_barang" name="aa" class="form-control" >
       <button type="submit" class="btn btn-sm btn-danger float-right"><i class="fas fa-file-pdf"></i>&ensp;Export Pdf</button>
       </form>
       &ensp;

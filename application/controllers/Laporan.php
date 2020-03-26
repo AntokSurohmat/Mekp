@@ -18,8 +18,8 @@ class Laporan extends CI_Controller {
 		$this->load->library('mypdf');
 
 
-//title
-		$data['barang'] = "Data List Barang";
+		//title
+
 		$data['barangmasuk'] = "Data Barang Masuk";
 		$data['barangkeluar'] = "Data Barang Keluar";
 		$data['perawatan'] = "Data Perawatan";
@@ -30,8 +30,8 @@ class Laporan extends CI_Controller {
 		$data['allperawatan'] = $this->db->get('mekp_perawatan')->result_array();
 		//menampilkan nama barang 
 		$data['allbarang'] = $this->db->get('mekp_barang')->result_array();
-		$this->load->model('Member_model','barang');
-		$data['allba'] = $this->barang->getAllBarang();
+		// $this->load->model('Member_model','barang');
+		// $data['allba'] = $this->barang->getAllBarang();
 		//menampilkan nama barang 
 		$data['allperbaikan'] = $this->db->get('mekp_perbaikan')->result_array();
 
@@ -70,14 +70,45 @@ class Laporan extends CI_Controller {
 
 			$data['alllaporan'] = $this->db->query($queryLaporan)->result_array();
 			$data['title'] = $name;
-			// $html = $this->template->load('layout/template','member/view_laporan',$data);
 
-			// $this->mypdf->generate('Laporan/dompdf');
-			// $html = $this->load->view('layout/templatepdf', $data, true);
-			// $html = $this->load->view('laporan/dompdf', $data, true);
 			$html = $this->template->load('layout/templatepdf','laporan/dompdf',$data, true);
 			$filename = $name;
-			$this->mypdf->generate($html,$filename);
+			$orientation = 'portait';
+			$this->mypdf->generate($html,$filename, $orientation);
+
+		}
+	}
+	public function laporanAll(){
+
+		$this->load->library('mypdf');
+		$data['barang'] = "Data List Barang";
+
+				//menampilkan nama barang 
+		$this->load->model('Member_model','barang');
+		$data['allba'] = $this->barang->getAllBarang();
+		$this->form_validation->set_rules('aa', 'Pilih Tabel','required');
+
+
+
+		if($this->form_validation->run() == false){
+			
+			$data['title'] = "Data Laporan";
+			$this->template->load('layout/template','member/view_laporan',$data);
+		}else{
+
+			$tabel = $this->input->post('aa');
+
+
+			$queryLaporan = "SELECT * FROM $tabel ";
+			// $row = $query->result_array();
+			$name ="List Data Barang";
+			$data['alllaporan'] = $this->db->query($queryLaporan)->result_array();
+			$data['title'] = $name;
+
+			$html = $this->template->load('layout/templatepdf','laporan/dompdf',$data, true);
+			$filename = $name;
+			$orientation = 'landscape';
+			$this->mypdf->generate($html,$filename, $orientation);
 
 		}
 	}
