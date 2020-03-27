@@ -83,6 +83,8 @@
             </div>
             <!-- /.card -->
           </div>
+          <?php echo  $this->input->post('b');?>
+          <?php echo  $this->input->post('c');?>
           <div class="col-md-12">
 
 
@@ -105,14 +107,14 @@
               <form action="'. base_url('laporan').'" method="post" target="blank" >
               <input type="hidden" readonly value="mekp_barang_masuk" name="aa" class="form-control" >
               <input type="hidden" readonly value ="'.set_value('b').'" name="bb" class="form-control" >
-              <input type="hidden" readonly value="'.set_value('c').'" name="cc" class="form-control" >
+              <input type="hidden" readonly value ="'.set_value('c').'" name="cc" class="form-control" >
               <button type="submit" class="btn btn-sm btn-danger float-right"><i class="fas fa-file-pdf"></i>&ensp;Export Pdf</button>
               </form>
               &ensp;
-              <form action="'. base_url('laporan/excel').'" method="post" target="blank" >
+              <form action="'. base_url('laporan/excel').'" method="post">
               <input type="hidden" readonly value="mekp_barang_masuk" name="aa" class="form-control" >
-              <input type="hidden" readonly value ="$awal" name="bb" class="form-control" >
-              <input type="hidden" readonly value="$akhir" name="cc" class="form-control" >
+              <input type="hidden" readonly value ="'.set_value('b').'" name="bb" class="form-control" >
+              <input type="hidden" readonly value ="'.set_value('c').'" name="cc" class="form-control" >
               <button type="submit" class="btn btn-sm btn-success float-right"><i class="fas fa-file-excel"></i>&ensp;Export Excel</button>
               </form>
               </div>
