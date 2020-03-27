@@ -28,6 +28,8 @@ class Mypdf {
 
 // Output the generated PDF to Browser
 		$dompdf->stream($filename . ".pdf",array("Attachment" => 0));
+
+		// return $dompdf->stream($filename . ".pdf");
 	}
 }
 

@@ -102,14 +102,14 @@
               $out .= '</h3>
               <div class="btn-group float-right">
               <div class="row">
-              <form action="'. base_url('laporan').'" method="post" >
+              <form action="'. base_url('laporan').'" method="post" target="blank" >
               <input type="hidden" readonly value="mekp_barang_masuk" name="aa" class="form-control" >
               <input type="hidden" readonly value ="'.set_value('b').'" name="bb" class="form-control" >
               <input type="hidden" readonly value="'.set_value('c').'" name="cc" class="form-control" >
               <button type="submit" class="btn btn-sm btn-danger float-right"><i class="fas fa-file-pdf"></i>&ensp;Export Pdf</button>
               </form>
               &ensp;
-              <form action="'. base_url('laporan/excel').'" method="post" >
+              <form action="'. base_url('laporan/excel').'" method="post" target="blank" >
               <input type="hidden" readonly value="mekp_barang_masuk" name="aa" class="form-control" >
               <input type="hidden" readonly value ="$awal" name="bb" class="form-control" >
               <input type="hidden" readonly value="$akhir" name="cc" class="form-control" >
@@ -173,7 +173,7 @@
             $out .= '</h3>
             <div class="btn-group float-right">
             <div class="row">
-            <form action="'. base_url('laporan').'" method="post" >
+            <form action="'. base_url('laporan').'" method="post" target="blank" >
             <input type="hidden" readonly value="mekp_barang_keluar" name="aa" class="form-control" >
             <input type="hidden" readonly value ="'.set_value('b').'" name="bb" class="form-control" >
             <input type="hidden" readonly value="'.set_value('c').'" name="cc" class="form-control" >
@@ -255,7 +255,7 @@
           $out .='</h3>
           <div class="btn-group float-right">
           <div class="row">
-          <form action="'. base_url('laporan').'" method="post" >
+          <form action="'. base_url('laporan').'" method="post" target="blank" >
           <input type="hidden" readonly value="mekp_perawatan" name="aa" class="form-control" >
           <input type="hidden" readonly value ="'.set_value('b').'" name="bb" class="form-control" >
           <input type="hidden" readonly value="'.set_value('c').'" name="cc" class="form-control" >
@@ -323,8 +323,8 @@
         $out .= '</h3>
         <div class="btn-group float-right">
         <div class="row">
-        <form action="'. base_url('laporan').'" method="post" >
-        <input type="hidden" readonly value="mekp_perbaikan" name="aa" class="form-control" >
+        <form action="'. base_url('laporan').'" method="post" target="blank" >
+        <input type="hidden" readonly value="mekp_perbaikan" name="aa" class="form-control"  >
         <input type="hidden" readonly value ="'.set_value('b').'" name="bb" class="form-control" >
         <input type="hidden" readonly value="'.set_value('c').'" name="cc" class="form-control" >
         <button type="submit" class="btn btn-sm btn-danger float-right"><i class="fas fa-file-pdf"></i>&ensp;Export Pdf</button>
@@ -412,12 +412,12 @@
       $out .= $barang;
       $out .= '</h3>
       <div class="btn-group float-right">
-      <form action="'. base_url('laporan/laporanall').'" method="post" >
+      <form action="'. base_url('laporan/laporanall').'" method="post" target="blank">
       <input type="hidden" readonly value="mekp_barang" name="aa" class="form-control" >
       <button type="submit" class="btn btn-sm btn-danger float-right"><i class="fas fa-file-pdf"></i>&ensp;Export Pdf</button>
       </form>
       &ensp;
-      <form action="'. base_url('laporan/excel').'" method="post" >
+      <form action="'. base_url('laporan/excel').'" method="post"  >
       <input type="hidden" readonly value="mekp_barang_masuk" name="aa" class="form-control" >
       <input type="hidden" readonly value ="$awal" name="bb" class="form-control" >
       <input type="hidden" readonly value="$akhir" name="cc" class="form-control" >
