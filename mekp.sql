@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 18, 2020 at 04:47 AM
+-- Generation Time: Mar 28, 2020 at 02:17 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -69,8 +69,10 @@ CREATE TABLE `mekp_barang` (
 --
 
 INSERT INTO `mekp_barang` (`id_barang`, `kd_barang`, `nm_barang`, `merk`, `kategori`, `status`, `kondisi`, `jumlah`, `thn_pengadaan`, `catatan`) VALUES
-(5, 'M001', 'mouse', 15, 7, 4, 7, 110, 2020, ''),
-(6, 'K001', 'Keyboard', 17, 8, 4, 7, 43, 2020, 'ff');
+(5, 'M001', 'mouse', 15, 7, 4, 7, 98, 2020, ''),
+(6, 'K001', 'Keyboard', 17, 8, 4, 7, 42, 2020, 'ff'),
+(7, 'T001', 'monitor', 13, 9, 4, 7, 50, 2020, ''),
+(8, 'N001', 'proyektor', 15, 10, 4, 7, 2, 2020, 's');
 
 -- --------------------------------------------------------
 
@@ -95,7 +97,9 @@ CREATE TABLE `mekp_barang_keluar` (
 
 INSERT INTO `mekp_barang_keluar` (`id_barang_keluar`, `tgl_keluar`, `dari_ke`, `kd_barang`, `jumlah`, `kebutuhan`, `catatan`, `id_perbaikan`) VALUES
 (13, '2020-03-10', '1', 'M001', 20, 'ganti', 'good', 22),
-(14, '2020-03-10', '1', 'M001', 30, 'ganti', 'nice', 23);
+(14, '2020-03-10', '1', 'M001', 30, 'ganti', 'nice', 23),
+(15, '2020-03-02', '3', 'M001', 12, 'dsf', 'sdfsd', 24),
+(16, '2020-03-03', '2', 'K001', 1, 'sdf', 'sdfds', 25);
 
 --
 -- Triggers `mekp_barang_keluar`
@@ -140,9 +144,12 @@ CREATE TABLE `mekp_barang_masuk` (
 --
 
 INSERT INTO `mekp_barang_masuk` (`id_barang_masuk`, `kd_barang`, `jumlah`, `tgl_masuk`, `dari_ke`, `catatan`) VALUES
-(68, 'MK001', 35, '2020-03-09', 'pinjam', ''),
-(72, 'm001', 80, '2020-03-09', 'aaa', 'sdsf'),
-(73, 'm001', 70, '2020-03-10', 'beli', '');
+(68, 'K001', 35, '2020-03-09', 'pinjam', ''),
+(72, 'M001', 80, '2020-03-09', 'aaa', 'sdsf'),
+(73, 'M001', 70, '2020-03-10', 'beli', ''),
+(74, 'T001', 35, '2020-03-18', 'Membeli', ''),
+(76, 'N001', 2, '2020-03-19', 'beli', 's'),
+(77, 'T001', 15, '2020-03-19', 'dfgdf', 'dfgdfgdf');
 
 --
 -- Triggers `mekp_barang_masuk`
@@ -348,7 +355,9 @@ CREATE TABLE `mekp_perbaikan` (
 
 INSERT INTO `mekp_perbaikan` (`id_perbaikan`, `id_perawatan`, `tgl_perbaikan`, `lokasi`, `kebutuhan`, `kd_barang`, `jumlah`, `hasil`) VALUES
 (22, 2, '2020-03-10', 1, 'ganti', 'M001', 20, 'good'),
-(23, 2, '2020-03-10', 1, 'ganti', 'M001', 30, 'nice');
+(23, 2, '2020-03-10', 1, 'ganti', 'M001', 30, 'nice'),
+(24, 3, '2020-03-02', 3, 'dsf', 'M001', 12, 'sdfsd'),
+(25, 4, '2020-03-03', 2, 'sdf', 'K001', 1, 'sdfds');
 
 -- --------------------------------------------------------
 
@@ -595,19 +604,19 @@ ALTER TABLE `mekp_access_menu`
 -- AUTO_INCREMENT for table `mekp_barang`
 --
 ALTER TABLE `mekp_barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `mekp_barang_keluar`
 --
 ALTER TABLE `mekp_barang_keluar`
-  MODIFY `id_barang_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_barang_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `mekp_barang_masuk`
 --
 ALTER TABLE `mekp_barang_masuk`
-  MODIFY `id_barang_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `id_barang_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `mekp_forbi`
@@ -655,7 +664,7 @@ ALTER TABLE `mekp_perawatan`
 -- AUTO_INCREMENT for table `mekp_perbaikan`
 --
 ALTER TABLE `mekp_perbaikan`
-  MODIFY `id_perbaikan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_perbaikan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `mekp_role`
