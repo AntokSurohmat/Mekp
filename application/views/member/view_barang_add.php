@@ -174,7 +174,7 @@
                 <div class="card-header bg-info border-0">
                   <h3 class="card-title mt-1">
                     <i class="fas fa-th mr-1"></i>
-                    List Barang
+                    List Barang Sudah Ada
                   </h3>
 
                   <div class="card-tools">

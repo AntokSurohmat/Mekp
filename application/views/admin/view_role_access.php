@@ -50,6 +50,11 @@
           </table>
         </div>
         <!-- /.row -->
+        <div class="card-footer justify-content-between">
+          <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/role');?>">
+            <i class="fas fa-arrow-left"></i>&ensp;Back To Access Menu List
+          </a>
+        </div>
       </div>
       <!-- /.card-body -->
     </div>

@@ -820,11 +820,11 @@ class Auth extends CI_Controller {
 					'date_created' => time()
 				];
 
-				$this->db->insert('user_token', $user_token);
+				$this->db->insert('mekp_token', $user_token);
 				$this->_sendEmail($token, 'forgot');
 
 				$this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Please check your email to reset your password!</div>');
-				redirect('auth/forgotpassword');
+				redirect('auth');
 
 			}else{
 				$this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Email is not registered or activated!</div>');
@@ -843,7 +843,7 @@ class Auth extends CI_Controller {
 
 		if($user){
 
-			$user_token = $this->db->get_where('user_token',['token' => $token])->row_array();
+			$user_token = $this->db->get_where('mekp_token',['token' => $token])->row_array();
 			
 			if($user_token){
 				$this->session->set_userdata('reset_email',$email);
