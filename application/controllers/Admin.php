@@ -17,6 +17,7 @@ class Admin extends CI_Controller {
 		$data['countuser'] = $this->count->getCountUser();
 		$data['countmenu'] = $this->count->getCountMenu();
 		$data['countsubmenu'] = $this->count->getCountSubMenu();
+		$data['countforbi'] = $this->count->getCountForbi();
 
 		$data['title'] = "Dashboard";
 		$this->template->load('layout/template','admin/view_dashboard',$data);

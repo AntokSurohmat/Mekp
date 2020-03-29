@@ -18,6 +18,15 @@
 
     <section class="content">
       <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="callout callout-danger">
+              <h5><i class="fas fa-info"></i> Note:</h5>
+              <p class="text-justify">Petunjuk Singkat Penggunaan Aplikasi ini bisa dilihat di bagian <b><i>Navbar</i></b> <a href="#" data-toggle="modal" data-target="#modal-detail"><b>Detail</b></a> , dan penjelasan tentang aplkasi ini bisa dilihat di <b><i>Navbar</i></b> <a href="#" data-toggle="modal" data-target="#modal-about"><b>About</b></a> .</p>
+            </div>
+          </div>
+          <!--/. Col -->
+        </div>
         <!-- Small boxes (Stat box) -->
         <div class="row">
           <div class="col-lg-3 col-6">
@@ -37,16 +46,16 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-primary">
+            <div class="small-box bg-warning">
               <div class="inner">
-                <h3><?php echo $countuser; ?></h3>
+                <h3><?php echo $countforbi; ?></h3>
 
-                <p>User Register</p>
+                <p>Forbidden Menu</p>
               </div>
               <div class="icon">
-                <i class="fas fa-user-plus"></i>
+                <i class="fas fa-ban"></i>
               </div>
-              <a href="<?php echo base_url('setting/user');?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?php echo base_url('admin/forbidden');?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -80,6 +89,21 @@
             </div>
           </div>
           <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-primary">
+              <div class="inner">
+                <h3><?php echo $countuser; ?></h3>
+
+                <p>User Register</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-user-plus"></i>
+              </div>
+              <a href="<?php echo base_url('setting/user');?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
         </div>
         <!-- /.row -->
         <!-- Default box -->
@@ -88,7 +112,6 @@
             <h4 class="card-title"><strong>Selamat Datang</strong></h4>
           </div>
           <div class="card-body">
-            <p class="text-justify">Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
             <div class="row">
               <div class="col-lg-3 col-6">
                 <!-- small card -->
@@ -188,4 +211,6 @@
         <!-- /.card -->
 
       </div><!-- /.container-fluid -->
+
+
     </section>

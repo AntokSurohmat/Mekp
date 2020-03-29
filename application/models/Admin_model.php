@@ -31,6 +31,13 @@ class Admin_model extends CI_Model {
 		return $this->db->query($query)->row()->title;
 	}
 
+	public function getCountForbi(){
+
+		$query = "SELECT COUNT(name) as name FROM mekp_forbi";
+
+		return $this->db->query($query)->row()->name;
+	}
+
 
 
 

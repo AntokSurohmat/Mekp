@@ -10,10 +10,10 @@
         <!-- Left navbar links -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="index3.html" class="nav-link">Penggunaan</a>
+            <a href="#" class="nav-link" data-toggle="modal" data-target="#modal-detail">Detail</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link" data-toggle="modal" data-target="#modal-about">About</a>
           </li>
         </ul>
       </div>

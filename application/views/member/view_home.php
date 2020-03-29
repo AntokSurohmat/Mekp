@@ -19,13 +19,21 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="callout callout-danger">
+              <h5><i class="fas fa-info"></i> Note:</h5>
+              <p class="text-justify">Petunjuk Singkat Penggunaan Aplikasi ini bisa dilihat di bagian <b><i>Navbar</i></b> <a href="#" data-toggle="modal" data-target="#modal-detail"><b>Detail</b></a> , dan penjelasan tentang aplkasi ini bisa dilihat di <b><i>Navbar</i></b> <a href="#" data-toggle="modal" data-target="#modal-about"><b>About</b></a> .</p>
+            </div>
+          </div>
+          <!--/. Col -->
+        </div>
         <!-- Default box -->
         <div class="card">
-          <div class="card-header bg-success">
+          <div class="card-header">
             <h4 class="card-title"><strong>Selamat Datang</strong></h4>
           </div>
           <div class="card-body">
-            <p class="text-justify">Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
             <div class="row">
               <div class="col-lg-3 col-6">
                 <!-- small card -->
@@ -122,7 +130,7 @@
           </div>
           <!-- /.card-body -->
         </div>
-        <!-- /.card -->
+        <!-- /.card --->
 
       </div><!--/. container-fluid -->
     </section>
