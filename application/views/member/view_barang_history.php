@@ -7,7 +7,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?php echo base_url('setting');?>"><small>Member</small></a></li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url('member');?>"><small>Officer</small></a></li>
               <li class="breadcrumb-item"><small><?php echo $title; ?></small></li>
             </ol>
           </div><!-- /.col -->
@@ -32,9 +32,19 @@
           <div class="col-12">
             <div class="callout callout-danger">
               <h5><i class="fas fa-info"></i> Note:</h5>
-              <p>History Barang Disini Menjelaskan keluar masuknya barang
-                Barang masuk ketika kita menambahkan barang.
-              Sedangkan Barang Keluar ketika kita melakukan perbaikan</p>
+              <dl>
+                <dd>
+                  History Barang Disini Menjelaskan Masuk Dan Keluarnya Barang.
+                  <ul>
+                    <li>
+                      Jumlah Barang akan bertambah ketika barang yang sama di masukkan
+                    </li>
+                    <li>
+                      sedangkan jumlah barang berkurang ketika kita memasukkan jumlah barang di <b><i>Tabel Data Perbaikan</i></b>
+                    </li>
+                  </ul>
+                </dd>
+              </dl>
             </div>
           </div>
           <!--/. Col -->

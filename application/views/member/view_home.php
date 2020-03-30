@@ -7,7 +7,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?php echo base_url('setting');?>"><small>Member</small></a></li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url('member');?>"><small>Officer</small></a></li>
               <li class="breadcrumb-item"><small><?php echo $title; ?></small></li>
             </ol>
           </div><!-- /.col -->
@@ -30,7 +30,7 @@
         </div>
         <!-- Default box -->
         <div class="card">
-          <div class="card-header">
+          <div class="card-header bg-gray">
             <h4 class="card-title"><strong>Selamat Datang</strong></h4>
           </div>
           <div class="card-body">
@@ -84,7 +84,7 @@
                   <div class="icon">
                     <i class="fas fa-tools"></i>
                   </div>
-                  <a href="<?php echo base_url('member/pertukaran');?>" class="small-box-footer bg-info">
+                  <a href="<?php echo base_url('member/perawatan');?>" class="small-box-footer bg-info">
                     Data Perawatan
                   </a>
                 </div>

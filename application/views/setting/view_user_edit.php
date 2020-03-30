@@ -7,7 +7,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?php echo base_url();?>"><small>Setting</small></a></li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url('setting');?>"><small>Setting</small></a></li>
               <li class="breadcrumb-item"><small><?php echo $title; ?></small></li>
             </ol>
           </div>

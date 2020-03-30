@@ -284,26 +284,26 @@
 
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
-<script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+<!-- <script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
 <script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/raphael/raphael.min.js"></script>
 <script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/jquery-mapael/maps/usa_states.min.js"></script> -->
 <!-- ChartJS -->
-<script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/chart.js/Chart.min.js"></script>
+<!-- <script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/chart.js/Chart.min.js"></script> -->
 <!-- InputMask -->
-<script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/moment/moment.min.js"></script>
-<script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- <script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script> -->
 
 <!-- bootstrap datepicker -->
-<script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- date-range-picker -->
-<script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/daterangepicker/daterangepicker.js"></script>
 <script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/moment/moment.min.js"></script>
+<script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- date-range-picker -->
+
 <!-- PAGE SCRIPTS -->
 <script src="<?php echo base_url();?>assets/AdminLTE-master/dist/js/pages/dashboard.js"></script>
 
 <!-- Bootstrap Switch -->
-<script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- <script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script> -->
 
 <!-- DataTables -->
 <script src="<?php echo base_url();?>assets/AdminLTE-master/plugins/datatables/jquery.dataTables.js"></script>
@@ -339,18 +339,6 @@
     format: 'YYYY/MM/DD'
   }
 });
-    //Date range picker with time picker
-    // $('#reservationtime').daterangepicker({
-    //   timePicker: true,
-    //   timePickerIncrement: 30,
-    //   locale: {
-    //     format: 'MM/DD/YYYY hh:mm A'
-    //   }
-    // });
-
-  // $("input[data-bootstrap-switch]").each(function(){
-  //   $(this).bootstrapSwitch('state', $(this).prop('checked'));
-  // });
 </script>
 <script>
   $('.custom-file-input').on('change', function(){
@@ -362,7 +350,6 @@
   $('.form-check-input').on('click', function(){
     const menuId = $(this).data('menu');
     const roleId = $(this).data('role');
-
 
     $.ajax({
       url : "<?php echo base_url('admin/changeaccess') ; ?>",

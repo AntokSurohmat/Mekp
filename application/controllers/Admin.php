@@ -123,7 +123,7 @@ class Admin extends CI_Controller {
 		if($this->form_validation->run() == false){
 
 			$data['title'] = "Forbidden Menu";
-			$this->template->load('layout/template','setting/view_forbidden',$data);
+			$this->template->load('layout/template','admin/view_forbidden',$data);
 		}else{
 
 			$data = [
@@ -149,7 +149,7 @@ class Admin extends CI_Controller {
 		if($this->form_validation->run() == false){
 
 			$data['title'] = "Forbidden Menu";
-			$this->template->load('layout/template','setting/view_forbidden',$data);
+			$this->template->load('layout/template','admin/view_forbidden',$data);
 		}else{
 
 			$data = [

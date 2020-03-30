@@ -7,7 +7,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?php echo base_url('setting');?>"><small>Member</small></a></li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url('member');?>"><small>Officer</small></a></li>
               <li class="breadcrumb-item"><small><?php echo $title; ?></small></li>
             </ol>
           </div>
@@ -19,11 +19,22 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
+          <div class="col-12">
+            <div class="callout callout-danger">
+              <h5><i class="fas fa-info"></i> Note:</h5>
+              Silahkan Melengkapi Form Untuk Menampilkan Data yang di inginkan
+            </div>
+          </div>
+          <!--/. Col -->
+        </div>
+        <!--/. Row -->
+        <!-- Row Form Select Tabel -->
+        <div class="row">
           <div class="col-md-6">
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Form Laporan</h3>
+                <h3 class="card-title">Pilih Tabel</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -387,17 +398,7 @@
       break;
 
       default:
-      $out = '<div class="row">
-      <div class="col-12">
-      <div class="callout callout-danger">
-      <h5><i class="fas fa-info"></i> Note:</h5>
-      Silahkan Melengkapi Form Untuk Menampilkan Data yang di inginkan
-      </div>
-      </div>
-      <!--/. Col -->
-      </div>
-      <!--/. Row -->
-
+      $out = '
       <!-- Bot row -->
       <div class="row">
       <!-- Left col -->
