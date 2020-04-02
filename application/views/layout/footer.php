@@ -1,5 +1,4 @@
- <strong>Copyright &copy; 2020 Rahmat Rudianto</strong>
- All rights reserved.
- <div class="float-right d-none d-sm-inline-block">
- 	<a href="<?php echo base_url();?>"><b style="color: red;">S</b>istem<b style="color: red;">I</b>nventory</a> Beta
- </div>
+<div class="float-right d-none d-sm-inline">
+	<strong>Aplikasi Inventaris</strong>
+</div>
+<strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved. v3.0.3
