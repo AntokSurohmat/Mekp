@@ -1,58 +1,68 @@
 ###################
-What is CodeIgniter
+Aplikasi Inverntaris Berbasis Web
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+The Inventory Sitemap application is used to make it easier for Admins and Officers to record items in laboratories that have the following features:
+1. Access Menu management
+2. Forbidden Menu management
+3. Menu Management
+4. Management of SubMenu
+5. User Management
+The Above Features Are Specifically For Administrator.
+6. Master / Item Data Management
+7. Incoming Item Data Management
+8. Outgoing Item Data Management
+9. Maintenance Data Management
+10.Data Management improvements
+While these features can be managed by Officer and Admininstrator.
 
 *******************
 Release Information
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+This application is also used for practical work,  
+which is intended to help the work of administrators and officers to manage items in the laboratory.
 
 **************************
 Changelog and New Features
 **************************
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+Add Mechanic & Assistant Laboratorium
 
 *******************
 Server Requirements
 *******************
 
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+PHP version 7.2 
+Mysql version 5.7.24
 
 ************
 Installation
 ************
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+Just do normal instalation on xampp or laragon
 
 *******
 License
 *******
 
 Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+
+Copyright (c) 2014 - 2020, Rahmat Rudianto
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Aplikasi Inventaris Berbasis Web"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 *********
 Resources
 *********
-
+		*Admin LTE 3*
+- `_Admin LTE <https://adminlte.io/themes/dev/AdminLTE/index.html>`_
+-  `User Guide <https://adminlte.io/docs/3.0/>`_
+		*Code Igniter 3*
 -  `User Guide <https://codeigniter.com/docs>`_
 -  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
 -  `Community Forums <http://forum.codeigniter.com/>`_
