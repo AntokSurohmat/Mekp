@@ -4,7 +4,7 @@ The Inventory Sitemap application is used to make it easier for Admins and Offic
 * Access Menu management
 * Forbidden Menu management
 * Menu Management
-* Management of SubMenu
+* SubMenu Management
 * User Management
 
 The Above Features Are Specifically For Administrator.
@@ -12,7 +12,7 @@ The Above Features Are Specifically For Administrator.
 * Incoming Item Data Management
 * Outgoing Item Data Management
 * Maintenance Data Management
-* Data Management improvements
+* Improvements Data Management
 
 While these features can be managed by Officer and Admininstrator.
 
